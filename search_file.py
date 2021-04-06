@@ -2,8 +2,10 @@ import os
 import time
 import tkinter as tk
 from tkinter.filedialog import askdirectory
+
 tk.Tk().withdraw() # Close the root window
 folder_to_read = askdirectory()
+
 if folder_to_read == "":
     print("Exiting program")
     quit()
@@ -32,5 +34,6 @@ with open(folder_name + " 檔案搜尋結果.txt", "w", encoding="utf-8") as a:
 seconds = time.time() - start_time
 m, s = divmod(seconds, 60)
 h, m = divmod(m, 60)
+
 print("{:.0f} minutes and {:.1f} seconds used for searching folder contents for {}".format( m, s, search_string ))
 print("Found {} search results for {}".format(search_results_found, search_string))
